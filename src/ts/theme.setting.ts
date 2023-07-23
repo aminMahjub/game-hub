@@ -1,5 +1,3 @@
-import { ChangeEvent } from "react";
-
 const darkThemeMQ = window.matchMedia("(prefers-color-scheme: dark)");
 const htmlDoc = document.documentElement;
 
