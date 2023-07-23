@@ -1,12 +1,12 @@
 import logo from "../assets/logo.webp";
+import ColorSwitchMode from "./ColorSwitchMode";
 
 const Navigation = () => {
   return (
-    <nav
-      className='col-span-2 p-2 flex justify-start items-center '
-    >
+    <nav className="col-span-2 py-2 px-4 flex justify-between items-center">
       <img src={logo} width={55} height={55} />
-      
+
+      <ColorSwitchMode />
     </nav>
   );
 };

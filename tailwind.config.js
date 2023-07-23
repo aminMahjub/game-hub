@@ -7,6 +7,9 @@ export default {
       gridTemplateColumns: {
         "main-structure-col": "minmax(150px, 200px) 1fr",
       },
+      gridTemplateRows: {
+        "main-structure-row": "60px 1fr",
+      }
     },
   },
 
