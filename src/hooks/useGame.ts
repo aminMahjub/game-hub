@@ -2,10 +2,17 @@ import axios, { CanceledError } from "axios";
 import { useState, useEffect } from "react";
 import api from "../services/api";
 
+export interface Platforms {
+  id: number;
+  slug: string;
+  name: string;
+}
+
 export interface Game {
   id: number;
   name: string;
-  background_image: string,
+  background_image: string;
+  parent_platforms: { platform: Platforms }[];
 }
 
 interface FetchGames {
@@ -39,7 +46,7 @@ const useGame = () => {
     return () => controller.abort();
   });
 
-  return {games, error}
+  return { games, error };
 };
 
 export default useGame;
