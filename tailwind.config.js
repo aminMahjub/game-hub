@@ -5,10 +5,11 @@ export default {
   theme: {
     extend: {
       gridTemplateColumns: {
-        "main-structure-col": "minmax(150px, 200px) 1fr",
+        "app-structure-col": "minmax(150px, 200px) 1fr",
+        "game-cards-col": "repeat(auto-fit, minmax(370px, 1fr))"
       },
       gridTemplateRows: {
-        "main-structure-row": "60px 1fr",
+        "app-structure-row": "60px 1fr",
       }
     },
   },
