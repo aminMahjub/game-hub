@@ -1,7 +1,7 @@
 import axios, { CanceledError } from "axios";
 import { useState, useEffect } from "react";
 import api from "../services/api";
-
+ 
 export interface Platforms {
   id: number;
   slug: string;
