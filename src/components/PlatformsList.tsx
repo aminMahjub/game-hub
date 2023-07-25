@@ -1,5 +1,6 @@
-import { Platforms } from "../hooks/useGame";
 import platformIcons, { PlatformsSlugType } from "../services/getAllPlatformsIcons";
+
+import { Platforms } from "../types/games";
 
 const PlatformsList = ({
   parent_platforms,
