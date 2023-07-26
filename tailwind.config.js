@@ -15,6 +15,8 @@ export default {
     },
   },
 
+  safelist: ['text-rose-700', 'font-bold'],
+
   plugins: [require('daisyui')],
   daisyui: {
     themes: ["night", "light"]

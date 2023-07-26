@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Genre, SelectedGenreType } from "./types/genres";
 
 const App = () => {
-  const [selectedGenre, setSelectedGenre] = useState<SelectedGenreType>(null);
+  const [selectedGenre, setSelectedGenre] = useState<SelectedGenreType>(-1);
 
   return (
     <div className="grid grid-cols-app-structure-col grid-rows-app-structure-row overflow-x-hidden h-screen">

@@ -22,7 +22,7 @@ const GenresAside = ({
             <h1 className="text-3xl">Genres</h1>
           </li>
           {genres.map((genre) => {
-            const { id, name, games_count, slug } = genre;
+            const { id, name } = genre;
 
             return (
               <li
