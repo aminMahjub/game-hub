@@ -1,10 +1,10 @@
 import { CanceledError } from "axios";
 import { useState, useEffect } from "react";
 import api from "../services/api";
-
+import { AxiosRequestConfig } from "axios";
 import { Game, FetchGames } from "../types/games";
 
-const useGame = () => {
+const useGame = (requestConfig?: AxiosRequestConfig, deps?: unknown[]) => {
   const [games, setGames] = useState<Game[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
@@ -14,7 +14,7 @@ const useGame = () => {
 
     setLoading(true);
     api
-      .get<FetchGames>("/games", { signal: controller.signal })
+      .get<FetchGames>("/games", { signal: controller.signal, ...requestConfig })
       .then((res) => {
         setGames(res.data.results);
         setLoading(false);
@@ -34,7 +34,7 @@ const useGame = () => {
       });
 
     return () => controller.abort();
-  }, []);
+  }, deps ?? []);
 
   return { games, error, isLoading };
 };

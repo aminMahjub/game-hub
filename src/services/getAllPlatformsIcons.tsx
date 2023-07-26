@@ -1,8 +1,7 @@
-import { AiFillWindows, AiFillApple } from "react-icons/ai";
+import { AiFillWindows, AiFillApple, AiFillChrome } from "react-icons/ai";
 import { FaPlaystation, FaLinux } from "react-icons/fa";
 import { BsXbox, BsNintendoSwitch, BsDatabaseFillGear } from "react-icons/bs";
 import { DiAndroid, DiAppstore } from 'react-icons/di';
-import { Platforms } from "../hooks/useGame";
 
 const platformIcons = {
   pc: <AiFillWindows />,
@@ -13,6 +12,7 @@ const platformIcons = {
   linux: <FaLinux />,
   ios: <DiAppstore />, 
   android: <DiAndroid />,
+  web: <AiFillChrome />
 };
 
 export type PlatformsSlugType = keyof typeof platformIcons;

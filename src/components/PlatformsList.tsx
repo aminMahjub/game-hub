@@ -13,7 +13,7 @@ const PlatformsList = ({
         return (
           <div
             key={platform.id}
-            className="badge badge-ghost hover:badge-primary cursor-none"
+            className="badge badge-ghost hover:badge-primary cursor-default"
           >
             {platformIcons[`${platform.slug as PlatformsSlugType}`]}
           </div>

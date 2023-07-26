@@ -1,11 +1,11 @@
-import { AxiosError, CanceledError } from "axios";
+import { CanceledError } from "axios";
 import { useState, useEffect } from "react";
 import api from "../services/api";
 
-import { FetchGenres, Genres } from "../types/genres";
+import { FetchGenres, Genre } from "../types/genres";
 
 const useGenres = () => {
-  const [genres, setGenres] = useState<Genres[]>([]);
+  const [genres, setGenres] = useState<Genre[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
 
