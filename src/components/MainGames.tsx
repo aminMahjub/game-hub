@@ -2,7 +2,6 @@ import useGame from "../hooks/useGames.ts";
 import GameCards from "./GameCards.tsx";
 import GameCardsSkeleton from "./GameCardsSkeleton.tsx";
 import GameCardsContainer from "./GameCardsContainer.tsx";
-import PlatformsSelector from "./PlatformsSelector.tsx";
 
 import { SelectedGenreType } from "../types/genres";
 import { SelectedPltaformType } from "../types/platforms.ts";

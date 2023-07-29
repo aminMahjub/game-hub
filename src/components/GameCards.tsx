@@ -1,5 +1,6 @@
 import PlatformsList from "./PlatformsList";
 import MetaCritic from "./MetaCritic";
+import getImageURL from "../services/get-image-url";
 
 import { Game } from "../types/games";
 
@@ -9,7 +10,7 @@ const GameCards = ({ game }: { game: Game }) => {
   return (
     <>
       <figure>
-        <img src={cardBgImage} alt="Shoes" />
+        <img src={getImageURL(cardBgImage)} alt="Shoes" />
       </figure>
 
       <div className="card-body">
