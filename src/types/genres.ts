@@ -7,7 +7,7 @@ export interface Genre {
 
 export interface FetchGenres {
     count: number,
-    results: Genres[]
+    results: Genre[]
 }
 
-export type SelectedGenreType = Genres | null;
+export type SelectedGenreType = Genre | null;

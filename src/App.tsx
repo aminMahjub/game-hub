@@ -1,21 +1,32 @@
 import Navigation from "./components/NavigationBar";
 import MainGames from "./components/MainGames";
 import GenresAside from "./components/GenresAside";
+import PlatformsSelector from "./components/PlatformsSelector"; 
+
 import { useState } from "react";
 
-import { Genre, SelectedGenreType } from "./types/genres";
+import { Genre } from "./types/genres";
+import { Platforms } from "./types/platforms";
+import { QueryType } from "./types/global";
 
 const App = () => {
-  const [selectedGenre, setSelectedGenre] = useState<SelectedGenreType>(-1);
+  const [queries, setQueries] = useState<QueryType>({
+    selectedGenre: null,
+    selectedPlatform: null,
+  });
 
   return (
     <div className="grid grid-cols-app-structure-col grid-rows-app-structure-row overflow-x-hidden h-screen">
       <Navigation />
       <GenresAside
-        selectedGenreId={selectedGenre.id}
-        onSelectedGenre={(genre: Genre) => setSelectedGenre(genre)}
+        selectedGenreId={queries.selectedGenre?.id}
+        onSelectedGenre={(genre: Genre) => setQueries({...queries, selectedGenre: genre})}
       />
-      <MainGames selectedGenre={selectedGenre}/>
+      <div className="px-5 pb-4 mt-6">
+        <PlatformsSelector selectedPlatformId={queries.selectedPlatform?.id} onChangePlatform={(plt: Platforms) => setQueries({...queries, selectedPlatform: plt})} />
+        <MainGames selectedGenre={queries.selectedGenre} selectedPlatform={queries.selectedPlatform} />
+
+      </div>
     </div>
   );
 };

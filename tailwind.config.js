@@ -10,7 +10,7 @@ export default {
       },
       gridTemplateRows: {
         "app-structure-row": "60px 1fr",
-        "game-cards-row": "repeat(2, 383px)"
+        "game-cards-row": "repeat(3, 383px)"
       }
     },
   },

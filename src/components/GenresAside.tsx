@@ -6,9 +6,9 @@ const GenresAside = ({
   selectedGenreId,
 }: {
   onSelectedGenre: (genre: Genre) => void;
-  selectedGenreId: number;
+  selectedGenreId: number | undefined;
 }) => {
-  const { genres, error, isLoading } = useGenres();
+  const { data: genres, error, isLoading } = useGenres();
 
   return (
     <aside className="relative">
@@ -21,7 +21,7 @@ const GenresAside = ({
           <li className="mb-4">
             <h1 className="text-3xl">Genres</h1>
           </li>
-          {genres.map((genre) => {
+          {genres?.map((genre) => {
             const { id, name } = genre;
 
             return (
