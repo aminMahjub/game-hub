@@ -23,7 +23,7 @@ const App = () => {
         onSelectedGenre={(genre: Genre) => setQueries({...queries, selectedGenre: genre})}
       />
       <div className="px-5 pb-4 mt-6">
-        <h1 className="text-4xl ml-7 mb-10 ">{queries.selectedGenre?.name + ' Games' ?? 'Games'}</h1>
+        <h1 className="text-4xl ml-7 mb-10 ">{queries.selectedGenre?.name ?? 'Games'}</h1>
         <PlatformsSelector onChangePlatform={(plt: Platforms) => setQueries({...queries, selectedPlatform: plt})} />
         <MainGames selectedGenre={queries.selectedGenre} selectedPlatform={queries.selectedPlatform} />
 
