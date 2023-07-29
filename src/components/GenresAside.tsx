@@ -1,4 +1,5 @@
 import useGenres from "../hooks/useGenres";
+
 import { Genre } from "../types/genres";
 
 const GenresAside = ({

@@ -3,10 +3,8 @@ import { Platforms } from "../types/platforms";
 
 const PlatformsSelector = ({
   onChangePlatform,
-  selectedPlatformId
 }: {
   onChangePlatform: (plt: Platforms) => void,
-  selectedPlatformId: number | undefined
 }) => {
   const { data: platforms, error } = usePlatforms();
 
