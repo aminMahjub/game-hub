@@ -59,6 +59,5 @@ const ColorSwitchMode = () => {
 };
 
 const themes = ["night", "light", "system"];
-type ThemesStatusTypes = (typeof themes)[number];
 
 export default ColorSwitchMode;

@@ -1,3 +1,5 @@
+import ErrorToast from "./ErrorToast";
+
 import useGenres from "../hooks/useGenres";
 
 import { Genre } from "../types/genres";
@@ -27,7 +29,7 @@ const GenresAside = ({
 
             return (
               <li
-                onClick={(event) => {
+                onClick={() => {
                   onSelectedGenre(genre);
                 }}
                 key={id}
@@ -42,6 +44,7 @@ const GenresAside = ({
           })}
         </ul>
       </div>
+      {error && <ErrorToast errorMsg={error}/>}
     </aside>
   );
 };

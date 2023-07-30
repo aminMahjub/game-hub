@@ -1,6 +1,6 @@
 import { AiFillWindows, AiFillApple, AiFillChrome } from "react-icons/ai";
 import { FaPlaystation, FaLinux } from "react-icons/fa";
-import { BsXbox, BsNintendoSwitch, BsDatabaseFillGear } from "react-icons/bs";
+import { BsXbox, BsNintendoSwitch } from "react-icons/bs";
 import { DiAndroid, DiAppstore } from 'react-icons/di';
 
 const platformIcons = {

@@ -2,6 +2,7 @@ import useGame from "../hooks/useGames.ts";
 import GameCards from "./GameCards.tsx";
 import GameCardsSkeleton from "./GameCardsSkeleton.tsx";
 import GameCardsContainer from "./GameCardsContainer.tsx";
+import ErrorToast from "./ErrorToast.tsx";
 
 import { SelectedGenreType } from "../types/genres";
 import { SelectedPltaformType } from "../types/platforms.ts";
@@ -30,6 +31,8 @@ const MainGames = ({ selectedGenre, selectedPlatform }: { selectedGenre: Selecte
           </GameCardsContainer>
         );
       })}
+      {error && <ErrorToast errorMsg={error}/>}
+      
     </main>
   );
 };
