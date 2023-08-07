@@ -7,10 +7,11 @@ const ErrorToast = ({ errorMsg }: { errorMsg: string }) => {
     const timer = setInterval(() => {
       setCount(count - 1);
 
-      if (count === 0) {
-        clearInterval(timer);
-      }
     }, 1000);
+    
+    if (count === 0) {
+      clearInterval(timer);
+    }
 
     return () => {
       clearInterval(timer)

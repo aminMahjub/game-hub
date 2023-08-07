@@ -8,5 +8,6 @@ export interface FetchRespone<T> {
 
 export interface QueryType {
     selectedGenre: SelectedGenreType;
-    selectedPlatform: SelectedPltaformType; 
+    selectedPlatform: SelectedPltaformType;
+    selectedOrder: string | null
 }

@@ -7,15 +7,37 @@ import ErrorToast from "./ErrorToast.tsx";
 import { SelectedGenreType } from "../types/genres";
 import { SelectedPltaformType } from "../types/platforms.ts";
 
-const MainGames = ({ selectedGenre, selectedPlatform }: { selectedGenre: SelectedGenreType, selectedPlatform: SelectedPltaformType}) => {
-  const { data: games, error, isLoading } = useGame(
-    { params: { genres: selectedGenre?.id, platforms: selectedPlatform?.id } },
-    [selectedGenre, selectedPlatform]
+const MainGames = ({
+  selectedGenre,
+  selectedPlatform,
+  selectedOrder,
+}: {
+  selectedGenre: SelectedGenreType;
+  selectedPlatform: SelectedPltaformType;
+  selectedOrder: string | null;
+}) => {
+  const {
+    data: games,
+    error,
+    isLoading,
+  } = useGame(
+    {
+      params: {
+        genres: selectedGenre?.id,
+        platforms: selectedPlatform?.id,
+        ordering: selectedOrder,
+      },
+    },
+    [selectedGenre, selectedPlatform, selectedOrder]
   );
   const gameCardsCount = [1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   return (
-    <main className={`relative grid gap-y-8 gap-x-7 justify-items-center grid-rows-game-cards-row grid-cols-game-cards-col ${isLoading ? 'overflow-y-hidden' : ''}`}>
+    <main
+      className={`relative grid gap-y-8 gap-x-7 justify-items-center grid-rows-game-cards-row grid-cols-game-cards-col ${
+        isLoading ? "overflow-y-hidden" : ""
+      }`}
+    >
       {isLoading &&
         gameCardsCount.map((sklt) => {
           return (
@@ -31,8 +53,7 @@ const MainGames = ({ selectedGenre, selectedPlatform }: { selectedGenre: Selecte
           </GameCardsContainer>
         );
       })}
-      {error && <ErrorToast errorMsg={error}/>}
-      
+      {error && <ErrorToast errorMsg={error} />}
     </main>
   );
 };
