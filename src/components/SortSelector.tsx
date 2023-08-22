@@ -16,7 +16,7 @@ const SortSelector = ({
         const { value, label } = sortItem;
 
         return (
-          <option value={label} onClick={() => onSelectedOrder(value)}>
+          <option value={label} key={value} onClick={() => onSelectedOrder(value)}>
             {label}
           </option>
         );
